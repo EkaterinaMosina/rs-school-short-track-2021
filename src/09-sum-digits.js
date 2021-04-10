@@ -10,8 +10,21 @@
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-function getSumOfDigits(/* n */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(n) {
+  let number = n;
+  let sum = 0;
+  let num;
+  while (number > 9) {
+    while (number) {
+      num = number % 10;
+      sum += num;
+      number = Math.floor(number / 10);
+    }
+    number = sum;
+    sum = 0;
+  }
+
+  return number;
 }
 
 module.exports = getSumOfDigits;
